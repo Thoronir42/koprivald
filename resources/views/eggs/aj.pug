@@ -1,0 +1,40 @@
+extends ../layout/singleColumnLayout
+
+block content
+  h1 Copa tuto je?
+  div(class=['egg-aj', secretUnlocked && 'animate'])
+    h2 Společný jev
+    .grad
+      h3 Průprava
+      p
+        | Zdejší sekce vznikla na příkaz jisté nejmenované osoby, která přihlížela na zrod těchto stránek. Tento vizuální
+        | jev pouze slouží k demonstraci možností techonologie CSS.
+      p Jev lze promítnout na celý blok stránky obalující všechny stránky, jako je tomu v této části.
+      p
+        | Díky gradientnímu zápisu a maskování pozadí textem totiž lze vytvořit efekt demonstrovaný na těchto
+        | odstavcích. Dále nám již stačí pouze definovat obsah, který pokryje dostatečné možství stránky pro
+        | projevení jevu.
+      h3 Lorem
+      p
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, aperiam autem consectetur in iste, laborum maiores modi nam, nostrum nulla odio officiis optio porro quaerat ratione repudiandae soluta tempore ut. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi at fuga repellat sit? A at corporis delectus enim fuga itaque magni omnis, perspiciatis, praesentium quam quibusdam sed soluta suscipit veritatis.
+        | Ad adipisci alias amet aspernatur assumenda consectetur cupiditate ea eum harum laboriosam libero, modi obcaecati quaerat quia rem saepe tempore temporibus veniam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad asperiores at ex fuga iusto quas quia quo reprehenderit, sapiente! Ad dolore doloremque eum fugiat id necessitatibus numquam sequi totam veniam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur commodi consequuntur corporis cum cumque eligendi error est ex ipsa iste laudantium minima, odit officiis quae sequi sunt totam vitae!
+        | Animi aperiam blanditiis consectetur eaque id ipsa mollitia placeat veritatis! Deleniti deserunt eius fugiat harum illum natus nulla, odio quam quisquam voluptatem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae cum, debitis dignissimos dolorem doloribus ducimus enim eos esse est et fugit hic laudantium odio, quasi quia repudiandae similique soluta voluptate.
+
+    h2 Jednotlivé jevy
+    div
+      h3.grad Průprava
+      p.grad
+        | Tento jev lze promítnout na jednotlivé odstavce zcela stejným pravidlem. Díky tomu se potom gradientní
+        | přechod bude vztahovat pouze na samotné celky.
+      p.grad
+        | Jinýmy slovy to znamená, že každý nový celek bude mít vlastní gradientní spád a bude rotace bude
+        | vystředěná pro každý odstavec zvlášť.
+      h3.grad Lorem
+      p.grad
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut consectetur dolorum, id inventore maiores officia vitae. Aspernatur beatae commodi distinctio esse facere libero molestias quod repudiandae suscipit. Ea, impedit!
+      p.grad
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium consequatur corporis dolorem, eum eveniet fugit laborum optio praesentium quae quibusdam quidem quo saepe velit voluptatum. Aspernatur ipsa perferendis sequi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet assumenda delectus, ea eos nobis porro. Culpa ea fugit harum iure sit! Aliquam culpa eius molestiae odio ratione tempore tenetur voluptatibus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, ad, autem consequatur esse est eum expedita inventore ipsam ipsum itaque laboriosam natus placeat quae, quia ratione repellat repellendus suscipit tempora.
+
+
+block append pageStyles
+  link(rel='stylesheet' type='text/css' href='/css/egg-aj.css')

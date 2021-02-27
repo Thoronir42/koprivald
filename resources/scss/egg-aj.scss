@@ -1,0 +1,35 @@
+.egg-aj {
+  h1, h2, h3 {
+    display: inline-block;
+  }
+
+  &.animate {
+    animation: rotate-gradient 2s ease-in-out infinite;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+
+  .grad {
+    background: linear-gradient(var(--gradient-angle, 355deg), rgba(2, 0, 36, 1) 0%, rgba(146, 12, 190, 1) 37%, rgba(255, 145, 0, 1) 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    //text-shadow: 2px 4px 4px rgba(0, 128, 0, 0.5);
+    font-weight: bold;
+  }
+}
+
+@keyframes rotate-gradient {
+  $stepCount: 20;
+  $stepPct: 100/$stepCount;
+  $stepAngle: 360deg / $stepCount;
+
+  @for $i from 0 to $stepCount {
+    #{$i * $stepPct}% {
+      --gradient-angle: #{$i*$stepAngle};
+    }
+  }
+}
