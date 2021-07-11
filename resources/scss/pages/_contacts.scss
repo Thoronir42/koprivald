@@ -1,0 +1,39 @@
+.contacts {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  gap: 0.5em;
+
+  .logo {
+    writing-mode: tb;
+    font-size: 4em;
+
+    display: flex;
+    justify-content: center;
+
+    .logo-text {
+      transform: rotate(180deg);
+    }
+  }
+
+  .person {
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-size: 2em;
+      white-space: break-spaces;
+    }
+    .role {
+      font-size: 0.75em;
+      color: var(--primary);
+    }
+
+    .links {
+      margin-top: 1em;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+  }
+}

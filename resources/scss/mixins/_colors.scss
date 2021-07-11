@@ -1,0 +1,18 @@
+$step: 10;
+$steps: 100 / $step;
+$middle: $steps / 2;
+
+@mixin mixColorParam($color, $name, $lightAccent:white, $darkAccent:black) {
+  @for $i from 0 to $middle {
+    $value: $i * $step;
+    $colorIntensity: $value * 2 * 1%;
+    --#{$name}-#{$value * 10}: #{mix($color, $darkAccent, $colorIntensity)};
+  }
+  --#{$name}: #{$color};
+  @for $i from $middle + 1 through $steps {
+    $value: $i * $step;
+    $colorIntensity: (100% - $value) * 2;
+    --#{$name}-#{$value * 10}: #{mix($color, $lightAccent, $colorIntensity)};
+  }
+
+}

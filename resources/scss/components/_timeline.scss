@@ -1,0 +1,48 @@
+.timeline {
+
+  display: grid;
+  grid-template-rows: 1fr;
+  place-items: center;
+
+  :is(.graph, .legend) {
+    grid-row: 1;grid-column: 1;
+  }
+
+  .legend {
+    place-self: start;
+    margin-top: 2em;
+    margin-left: 2em;
+    z-index: 1;
+
+    .item {
+      display: flex;
+      align-items: center;
+
+      &:before {
+        display: block; content: '';
+        margin-right: 0.75em;
+
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        background: var(--color);
+      }
+
+      &:not(:first-child) {
+        margin-top: 0.75em;
+      }
+    }
+  }
+
+  .graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    span {
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+}

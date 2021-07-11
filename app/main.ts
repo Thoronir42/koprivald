@@ -8,7 +8,7 @@ app.use(routes);
 app.use(express.static('public'))
 
 app.set('views', 'resources/views');
-app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 
 
 app.listen(PORT, () => {

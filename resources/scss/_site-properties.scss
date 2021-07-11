@@ -1,0 +1,7 @@
+@import "mixins/colors";
+
+body {
+  @include mixColorParam($primary, 'primary');
+  @include mixColorParam($secondary, 'secondary');
+  @include mixColorParam(#888, 'neutral');
+}

@@ -1,3 +1,14 @@
-@import './layout/reset';
-@import './layout/navbar';
+@import "vars";
 
+@import './layout/reset';
+@import './layout/column-layout';
+@import "./layout/typography";
+
+@import "site-properties";
+
+@import './components/navbar';
+@import "./components/timeline";
+@import "./components/btn";
+
+@import "pages/projects";
+@import "pages/contacts";

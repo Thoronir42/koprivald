@@ -1,23 +1,12 @@
 import {Router} from "express";
 
+import proj from "./proj.json";
+
 const routes = Router();
 
 routes.get('/', (req, res) => {
+    res.locals.proj = proj
     res.render('index')
-})
-
-routes.get('/about-us', (req, res) => {
-    res.render('aboutUs')
-})
-
-routes.get('/eggs/aj', (req, res) => {
-    let params = {
-        secretUnlocked: false,
-    };
-    if (req.query.secret === 'anezka') {
-        params.secretUnlocked = true;
-    }
-    res.render('eggs/aj', params);
 })
 
 export default routes;
