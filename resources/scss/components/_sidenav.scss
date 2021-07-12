@@ -1,0 +1,44 @@
+.sidenav {
+  position: fixed;
+  top: calc(50vh - 10em);
+  right: 2em;
+
+  writing-mode: tb;
+
+  display: flex;
+  gap: 0.25em;
+
+  .link {
+    --bg-color: var(--neutral-1000);
+    --fg-color: var(--neutral-0);
+
+    border: 1px solid var(--fg-color);
+    border-radius: 1em;
+    background: var(--bg-color);
+
+    transition: all 0.3s;
+    transition-delay: calc(var(--order, 0) * 60ms);
+
+    a {
+      display: block;
+      padding: 1.25em 0.5em;
+
+      color: var(--fg-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    &.active {
+      --bg-color: var(--neutral-0);
+      --fg-color: var(--neutral-1000);
+    }
+  }
+}
+
+body:not(.sidenav-visible) {
+  .sidenav {
+    .link {
+      opacity: 0;
+    }
+  }
+}
