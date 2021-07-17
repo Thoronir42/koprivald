@@ -1,6 +1,7 @@
 .sidenav {
+  z-index: 100;
   position: fixed;
-  top: calc(50vh - 10em);
+  top: calc(35vh - 10em);
   right: 2em;
 
   writing-mode: tb;

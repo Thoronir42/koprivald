@@ -1,0 +1,24 @@
+.tippy-box[data-theme~='koprivald'] {
+  background-color: var(--neutral-1000);
+  color: var(--neutral-0);
+
+  border: 1px solid var(--primary);
+  border-radius: 1em;
+
+
+  &[data-placement^='top'] > .tippy-arrow::before {
+    bottom: -8px;
+    border-top-color: var(--primary);
+  }
+  &[data-placement^='bottom'] > .tippy-arrow::before {
+    top: -8px;
+    border-bottom-color: var(--primary);
+  }
+  &[data-placement^='left'] > .tippy-arrow::before {
+    border-left-color: var(--primary);
+  }
+  &[data-placement^='right'] > .tippy-arrow::before {
+    border-right-color: var(--primary);
+  }
+}
+
