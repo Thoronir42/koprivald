@@ -27,6 +27,8 @@
       color: var(--fg-color);
       text-decoration: none;
       font-weight: bold;
+
+      transition: inherit;
     }
 
     &.active {
