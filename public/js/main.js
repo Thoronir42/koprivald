@@ -72,7 +72,8 @@ function setActiveSection(/**HTMLHeadingElement?*/ section) {
     }
 
     window.addEventListener('resize', () => updateScrollTargets())
-    updateScrollTargets()
+    // Leave some time for browser to scroll to anchor on new page load
+    setTimeout(() => updateScrollTargets(), 100)
 
     window.addEventListener('scroll', () => {
         updateSidenavVisible()
