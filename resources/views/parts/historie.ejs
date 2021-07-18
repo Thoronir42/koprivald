@@ -20,14 +20,21 @@
 </p>
 
 <div class="timeline">
-    <div class="legend">
-        <div class="item" style="--color: var(--secondary);">Umělecké vyznění</div>
-        <div class="item" style="--color: var(--primary);">Hospodářské úspěchy</div>
+    <div class="legend-rail">
+        <div class="legend">
+            <div class="item" style="--color: var(--secondary);">Umělecké vyznění</div>
+            <div class="item" style="--color: var(--primary);">Hospodářské úspěchy</div>
+        </div>
     </div>
     <div class="graph">
-        <span>1793</span>
+        <span class="year">1792</span>
         <img src="/images/graf-03.jpg" alt="Časová osa" width="345" height="2459">
-        <span>2021</span>
+
+        <% history.markers.forEach((marker) => { %>
+            <%- include('../components/historyMarker', {marker}) -%>
+        <% }) %>
+
+        <span class="year">2021</span>
     </div>
 
 </div>

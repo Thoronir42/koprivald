@@ -1,18 +1,28 @@
 .timeline {
-
   display: grid;
   grid-template-rows: 1fr;
   place-items: center;
 
-  :is(.graph, .legend) {
+  :is(.graph, .legend-rail) {
     grid-row: 1;grid-column: 1;
   }
 
+  .legend-rail {
+    place-self: stretch start;
+    margin: 2em 0 4em 2em;
+  }
+
   .legend {
-    place-self: start;
-    margin-top: 2em;
-    margin-left: 2em;
+    position: sticky;
+    top: 2em;
+
     z-index: 1;
+
+    background: rgba(white, 0.75);
+    box-shadow: rgba(white, 0.75) 0 0 0.5rem 0.5rem;
+    border-radius: 1em;
+    padding: 0.25em 0.5em;
+
 
     .item {
       display: flex;
@@ -35,14 +45,45 @@
   }
 
   .graph {
+    place-self: stretch;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
 
-    span {
+    > .year {
       font-size: 2em;
       font-weight: bold;
+    }
+  }
+
+  .marker {
+    position: absolute;
+    top: var(--top);
+
+    &[data-placement="right"] {
+      left: calc(50% + var(--offset));
+    }
+    &[data-placement="left"] {
+      right: calc(50% + var(--offset));
+    }
+
+    &[data-placement="right"] .header:before, &[data-placement="left"] .header:after {
+      display: block;
+      content: '';
+      width: 4em;
+      border-bottom: 2px dotted var(--secondary);
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    .content {
+      display: none;
     }
   }
 }
