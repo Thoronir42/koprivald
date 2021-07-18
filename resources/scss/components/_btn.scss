@@ -10,4 +10,8 @@
   font: inherit;
   color: var(--neutral-0);
   background: var(--neutral-1000);
+
+  &:not(.disabled):not(.disabled) {
+    cursor: pointer;
+  }
 }
