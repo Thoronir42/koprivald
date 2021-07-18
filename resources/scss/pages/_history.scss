@@ -1,3 +1,15 @@
+.history-detail-prompt {
+  &.active {
+    display: none;
+  }
+
+  &:not(.active) {
+    ~ .history-detail {
+      display: none;
+    }
+  }
+}
+
 .history-tooltip-content {
   padding: 0.75em;
 

@@ -5,6 +5,9 @@ function setClass(className, present) {
         document.body.classList.remove(className)
     }
 }
+function toggleHistoryDetail() {
+    document.querySelector('.history-detail-prompt').classList.toggle('active')
+}
 
 ;(function initSidenav() {
     const navbarEl = document.querySelector('.navbar')
