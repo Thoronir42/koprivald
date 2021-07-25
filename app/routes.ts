@@ -1,7 +1,7 @@
 import {Router} from "express";
+import * as container from "./services/container"
 
 import proj from "./proj.json";
-import history from "./data/koprivaldHistory"
 
 const jsTags = [
     {src: "https://unpkg.com/@popperjs/core@2"},
@@ -11,11 +11,26 @@ const jsTags = [
 
 const routes = Router();
 
-routes.get('/', (req, res) => {
+routes.get('/', async (req, res) => {
+    res.locals.bodyComponents = [
+        'components/sidenav',
+    ]
+
     res.locals.jsTags = jsTags
     res.locals.proj = proj
-    res.locals.history = history
+    res.locals.history = await container.getHistoryService().loadHistory()
+
     res.render('index')
+})
+
+routes.get('/t-32021', async (req, res) => {
+    res.locals.bodyComponents = []
+    res.locals.jsTags = jsTags
+    res.locals.proj = proj
+
+    res.locals.editions = await container.getProjectService().loadProject('t-32021')
+
+    res.render('t-32021')
 })
 
 export default routes;

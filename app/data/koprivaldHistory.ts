@@ -5,7 +5,12 @@ type MarkerPosition = {
 }
 
 class Marker {
-    constructor(private position: MarkerPosition, private label: string, private caption: string, private content: string) {
+    constructor(
+        public readonly position: MarkerPosition,
+        public readonly label: string,
+        public readonly caption: string,
+        public readonly content: string,
+    ) {
     }
 
     static left(top: string, offset: string, label: string, caption: string, content: string): Marker {

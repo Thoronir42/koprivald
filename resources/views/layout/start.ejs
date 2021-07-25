@@ -12,5 +12,8 @@
 </head>
 <body class="column-layout">
 <%- include('../parts/navbar'); -%>
-<%- include('../components/sidenav'); -%>
+<% bodyComponents && bodyComponents.forEach((component) => { %>
+    <%- include('../'+component); -%>
+<% }) %>
+
 <main class="container">

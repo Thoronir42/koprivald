@@ -1,5 +1,8 @@
 # Vendors
 /node_modules/
 
+# Project data
+/public/images/koprivald/*
+
 # Generated
 /public/css/*

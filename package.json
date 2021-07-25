@@ -8,11 +8,12 @@
     "watch-scss": "npm run build-scss -- -w resources/scss/**/*.scss",
     "start": "ts-node app/main.ts"
   },
-  "author": "",
+  "author": "Štěpán Ševčík <Thoronir42@Gmail.com>",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "image-size": "^1.0.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",

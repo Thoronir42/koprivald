@@ -1,0 +1,24 @@
+.image-gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1em;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: inline mandatory;
+
+  li {
+    block-size: 10em;
+
+    img {
+      block-size: 100%;
+      inline-size: auto;
+
+      scroll-snap-align: start;
+    }
+  }
+}
