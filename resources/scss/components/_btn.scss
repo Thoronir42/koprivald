@@ -1,17 +1,37 @@
 .btn {
+  --col-primary: var(--neutral-0);
+  --col-complementary: var(--neutral-1000);
+
   display: inline-grid;
   place-items: center;
   padding: 0.125em 1.25em;
   border-radius: 2em;
-  border: 1px solid;
+  border: 1px solid var(--col-primary);
 
   text-decoration: none;
   line-height: inherit;
   font: inherit;
-  color: var(--neutral-0);
-  background: var(--neutral-1000);
+  color: var(--col-primary);
+  background: var(--col-complementary);
+
+  transition: background .25s ease,
+              color .25s ease,
+              border .25s ease
+;
 
   &:not(.disabled):not(.disabled) {
     cursor: pointer;
   }
+
+  &.inv-hig {
+    &:hover {
+      color: var(--col-complementary);
+      background: var(--col-primary);
+    }
+  }
+}
+
+.btn-inverse {
+  --col-primary: var(--neutral-1000);
+  --col-complementary: var(--neutral-0);
 }

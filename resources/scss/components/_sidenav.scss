@@ -9,6 +9,11 @@
   display: flex;
   gap: 0.25em;
 
+  nav {
+    transition: all 0.3s;
+    transition-delay: calc(var(--order, 0) * 60ms);
+  }
+
   .link {
     --bg-color: var(--neutral-1000);
     --fg-color: var(--neutral-0);
@@ -16,9 +21,6 @@
     border: 1px solid var(--fg-color);
     border-radius: 1em;
     background: var(--bg-color);
-
-    transition: all 0.3s;
-    transition-delay: calc(var(--order, 0) * 60ms);
 
     a {
       display: block;
@@ -36,11 +38,18 @@
       --fg-color: var(--neutral-1000);
     }
   }
+
+  .brand {
+    img {
+      width: 37px;
+    }
+  }
 }
 
 body:not(.sidenav-visible) {
   .sidenav {
-    .link {
+    pointer-events: none;
+    nav {
       opacity: 0;
     }
   }

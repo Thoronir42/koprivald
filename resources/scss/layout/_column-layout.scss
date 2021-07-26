@@ -1,18 +1,12 @@
 @import "../mixins/breakpoints";
 
+$scrollbarWidth: 15px;
+
 .column-layout {
   --h-spacing: 0.5em;
 
   @include md() {
     --h-spacing: 2.5em;
-  }
-
-  .container {
-    width: 720px;
-    max-width: calc(100vw - 2* var(--h-spacing));
-    margin: 0 auto 2em;
-
-    text-align: center;
   }
 
   main > p {
@@ -25,11 +19,19 @@
   h1 {
     margin-block-start: 2em;
   }
+}
 
-  :is(.project-preview, .contacts, .timeline) {
-    width: 100%;
+.content-block {
+
+  &.middle {
+    width: 720px;
+    max-width: calc(100vw - 2 * var(--h-spacing) - #{$scrollbarWidth});
+    margin: auto;
+
+    text-align: center;
   }
-  .contacts {
-    margin-top: 5em;
+
+  &:not(:first-child) {
+    margin-block-start: 4rem;
   }
 }

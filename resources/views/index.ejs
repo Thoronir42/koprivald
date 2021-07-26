@@ -1,9 +1,22 @@
 <%- include('layout/start') -%>
 
-<img src="/images/koprivald.png" alt="Logo Kopřivald" width="285" height="344">
+<div class="content-block middle">
+    <img src="/images/koprivald.png" alt="Logo Kopřivald" width="285" height="344">
+</div>
 
-<%- include('parts/historie', {history}) -%>
-<%- include('parts/projekty') -%>
-<%- include('parts/kontakty') -%>
+<div class="content-block middle">
+    <%- include('parts/historie', {history}) -%>
+</div>
+<div class="content-block">
+    <p id="projekty" data-title="Projekty"></p>
+    <%- include('parts/t-32021/projectBlock') -%>
+</div>
+<div class="content-block">
+    <p id="o-nas" data-title="O nás"></p>
+    <%- include('parts/t-32021/authorsBio') -%>
+</div>
+<div class="content-block middle">
+    <%- include('parts/t-32021/kontakty') -%>
+</div>
 
 <%- include('layout/end') -%>

@@ -1,16 +1,20 @@
-@import "vars";
+@import "./themes/koprivald/vars";
 
 @import './layout/reset';
 @import './layout/column-layout';
 @import "./layout/typography";
 
+@import "./themes/koprivald/koprivald";
+
 @import "site-properties";
 
 @import './components/navbar';
 @import './components/sidenav';
+@import './components/footer';
 
 @import "./components/timeline";
 @import "./components/btn";
+@import "./components/imageGallery";
 @import "./components/tippy-koprivald";
 
 @import "pages/history";

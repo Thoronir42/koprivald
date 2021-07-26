@@ -8,7 +8,7 @@
     k této zanikající pýše, postavit se a hovořit.
 </p>
 <p class="history-detail-prompt">
-    <button class="btn" onclick="toggleHistoryDetail()">Více kopřiv</button>
+    <button class="btn inv-hig" onclick="toggleHistoryDetail()">Více kopřiv</button>
 </p>
 
 <p class="history-detail">
@@ -38,7 +38,11 @@
     </div>
     <div class="graph">
         <span class="year">1792</span>
-        <img src="/images/graf-03.jpg" alt="Časová osa" width="345" height="2459">
+        <div class="image-content">
+            <div class="axis"></div>
+            <img src="/images/graf.png" alt="Časová osa" width="420" height="4335">
+        </div>
+
 
         <% history.markers.forEach((marker) => { %>
             <%- include('../components/historyMarker', {marker}) -%>

@@ -1,28 +1,11 @@
 .timeline {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr auto;
   place-items: center;
 
-  :is(.graph, .legend-rail) {
-    grid-row: 1;grid-column: 1;
-  }
-
-  .legend-rail {
-    place-self: stretch start;
-    margin: 2em 0 4em 2em;
-  }
-
   .legend {
-    position: sticky;
-    top: 2em;
-
-    z-index: 1;
-
-    background: rgba(white, 0.75);
-    box-shadow: rgba(white, 0.75) 0 0 0.5rem 0.5rem;
-    border-radius: 1em;
-    padding: 0.25em 0.5em;
-
+    display: flex;
+    gap: 1.5em;
 
     .item {
       display: flex;
@@ -33,13 +16,9 @@
         margin-right: 0.75em;
 
         width: 2.5em;
-        height: 2.5em;
-        border-radius: 50%;
+        height: 0.3em;
+        border-radius: 0.5em;
         background: var(--color);
-      }
-
-      &:not(:first-child) {
-        margin-top: 0.75em;
       }
     }
   }
@@ -55,6 +34,25 @@
     > .year {
       font-size: 2em;
       font-weight: bold;
+    }
+
+    .image-content {
+      --axis-stretch: -1rem;
+      display: grid;
+
+      > * {
+        grid-column: 1; grid-row: 1;
+      }
+      img {
+        background-color: unset;
+      }
+      .axis {
+        place-self: stretch center;
+        margin-block-start: var(--axis-stretch);
+        margin-block-end: var(--axis-stretch);
+        border-left: 4px dashed var(--neutral-300);
+        border-right: 7px solid transparent;
+      }
     }
   }
 

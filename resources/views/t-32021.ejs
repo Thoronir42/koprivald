@@ -1,33 +1,43 @@
 <%- include('layout/start'); -%>
 
-<h1>Tvar č. 32021</h1>
-<p>
-    Bakalářské práce Veroniky Zálešákové a Manky Lustigové začaly vznikat souběžně při praxi
-    v manufaktuře Schlaggenwald. Atmosféra jejich vzniku byla zahlcená cigaretovým dýmem a obavami
-    nad osudem firmy. Z pýchy její dlouholeté tradice se pomalu stávalo břemeno, které těžklo rouškami
-    a pozastaveným trhem. Proto se autorky rozhodly, že jí chtějí odlehčit a vnést do současné
-    porcelánové výroby svěží vzduch.
-</p>
+<div class="content-block middle">
+    <h1>Tvar č. 32021</h1>
+    <p>
+        Bakalářské práce Veroniky Zálešákové a Manky Lustigové začaly vznikat souběžně při praxi
+        v manufaktuře Schlaggenwald. Atmosféra jejich vzniku byla zahlcená cigaretovým dýmem a obavami
+        nad osudem firmy. Z pýchy její dlouholeté tradice se pomalu stávalo břemeno, které těžklo rouškami
+        a pozastaveným trhem. Proto se autorky rozhodly, že jí chtějí odlehčit a vnést do současné
+        porcelánové výroby svěží vzduch.
+    </p>
 
 
-<p>
-    Prvotní myšlenkou bylo vytvoření nových tvarů pro klopýtající manufakturu, spolupráce s jejich
-    výrobou a zapojení zkušených pracovníků. V průběhu však firma zkrachovala a práce se přetavila
-    v samostatnou produkci, která stále myslí na to, že by mohla být manufakturně vyráběna.
-</p>
+    <p>
+        Prvotní myšlenkou bylo vytvoření nových tvarů pro klopýtající manufakturu, spolupráce s jejich
+        výrobou a zapojení zkušených pracovníků. V průběhu však firma zkrachovala a práce se přetavila
+        v samostatnou produkci, která stále myslí na to, že by mohla být manufakturně vyráběna.
+    </p>
 
-<p>
-    Autorky pozorují potřeby současného uživatele a zaujímají mladý postoj k trochu zatuhlé současné
-    české produkci. Přestavují podobu klasické jídelní sady se záměrem celkové kompatibility. Člověk má
-    možnost sestavit si z jednotlivých edic vzniklých pod různými koncepty jednotnou sadu, volně kusy
-    kombinovat. Výrazným prvkem při tvarovém řešení byla inspirace historií.
-</p>
+    <p>
+        Autorky pozorují potřeby současného uživatele a zaujímají mladý postoj k trochu zatuhlé současné
+        české produkci. Přestavují podobu klasické jídelní sady se záměrem celkové kompatibility. Člověk má
+        možnost sestavit si z jednotlivých edic vzniklých pod různými koncepty jednotnou sadu, volně kusy
+        kombinovat. Výrazným prvkem při tvarovém řešení byla inspirace historií.
+    </p>
+</div>
 
-<% editions.forEach((edition) => { %>
-    <h2><%-edition.name%></h2>
+<div class="content-block middle">
+    <% editions.forEach((edition) => { %>
+    <h2><%- edition.name %></h2>
     <%- include('components/imageGallery', {images: edition.images}) -%>
-<% }) %>
+    <% }) %>
+</div>
 
-<%- include('parts/t-32021/authorsBio') %>
+<div class="content-block">
+    <%- include('parts/t-32021/authorsBio') %>
+</div>
+
+<div class="content-block middle">
+    <%- include('parts/t-32021/kontakty') -%>
+</div>
 
 <%- include('layout/end') -%>

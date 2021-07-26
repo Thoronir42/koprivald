@@ -1,19 +1,58 @@
-.project-preview {
-  margin: 2em 0;
-
+.project-block {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10em, auto));
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  grid-auto-flow: dense;
   gap: 0.5em;
 
-  img {
-    height: 16em;
+  background-color: var(--secondary-900);
+  text-align: left;
+
+  @include sm() {
+    > * {
+      grid-column: 1;
+    }
+    > .preview {
+      grid-row: 1 / span 2;
+      width: 100%;
+      height: auto;
+      filter: contrast(0.4) brightness(1.4  );
+      z-index: 1;
+    }
+    > .header {
+      grid-row: 1;
+      z-index: 2;
+      padding: 2em 2em 0;
+    }
+    > .intro {
+      grid-row: 2;
+      z-index: 2;
+      padding: 0 calc(2em + var(--h-spacing)) 2em 2em;
+    }
+  }
+
+  @include md() {
+    grid-template-columns: auto 1fr;
+    > .header {
+      margin-top: 4px;
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    > .preview {
+      grid-row: span 2;
+    }
+    > .intro {
+      padding-inline-end: var(--h-spacing);
+    }
   }
 }
 
 
 .project-authors {
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: 60% 1fr;
   gap: 2em;
 
   .p1 {
@@ -25,45 +64,46 @@
 
   .bio {
     padding: 0.5em;
+    font-size: 1.2rem;
+    line-height: 1.5;
   }
   .img {
     z-index: 1;
+    width: 100%;
+    height: auto;
   }
   .author {
-    font-size: 1.6em;
+    font-family: Syne, sans-serif;
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: var(--primary);
   }
 
   .p1.bio {
-    place-self: start;
     text-align: right;
-    margin-right: calc(315px + 2em);
+    grid-column: 1;
+    grid-row: 1;
 
-    .author {
-      color: var(--primary);
+    p {
+      max-width: 400px;
+      margin-inline-start: auto;
     }
   }
   .p1.img {
-    place-self: start end;
-  }
-  .p1.img2 {
-    width: 25%;
-    height: auto;
-    place-self: end start;
-    margin-bottom: -1em;
-    margin-left: 1em;
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 
   .p2.bio {
-    width: calc(100% - (395px + 2em));
-    margin-left: auto;
-    padding-left: 4em;
-    margin-top: -4em;
-    padding-top: 10em;
+    grid-column: 2;
+    grid-row: 3;
 
-    background: var(--primary);
-    color: var(--neutral-1000);
+    p {
+      max-width: 400px;
+    }
   }
   .p2.img {
-    margin-bottom: 2em;
+    grid-column: 1;
+    grid-row: 2 / span 2;
   }
 }

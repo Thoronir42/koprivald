@@ -34,8 +34,21 @@ function setActiveSection(/**HTMLHeadingElement?*/ section) {
     }
 }
 
-;(function initSidenav() {
+// Leave some time for browser to scroll to anchor on new page load
+setTimeout(function initSidenav() {
     const sidenavEl = document.querySelector('.sidenav')
+    if (!sidenavEl) {
+        return
+    }
+
+    const brandLink = sidenavEl.querySelector('.brand a')
+    brandLink.addEventListener('click', (e) => {
+        e.preventDefault()
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        })
+    })
 
     window.scrollTargets = []
 
@@ -72,15 +85,14 @@ function setActiveSection(/**HTMLHeadingElement?*/ section) {
     }
 
     window.addEventListener('resize', () => updateScrollTargets())
-    // Leave some time for browser to scroll to anchor on new page load
-    setTimeout(() => updateScrollTargets(), 100)
+    updateScrollTargets();
 
     window.addEventListener('scroll', () => {
         updateSidenavVisible()
         updateActiveNavItem()
     })
     updateSidenavVisible()
-})()
+}, 100)
 
 ;(function initTooptips() {
     document.querySelectorAll('.marker').forEach((markerEl, i) => {
