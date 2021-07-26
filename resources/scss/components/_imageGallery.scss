@@ -21,4 +21,9 @@
       scroll-snap-align: start;
     }
   }
+
+  &.tiles {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, 42%);
+  }
 }

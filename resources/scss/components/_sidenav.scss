@@ -4,6 +4,7 @@
   top: calc(35vh - 10em);
   right: var(--h-spacing);
 
+  font-size: 0.8rem;
   writing-mode: tb;
 
   display: flex;
@@ -17,6 +18,9 @@
   .link {
     --bg-color: var(--neutral-1000);
     --fg-color: var(--neutral-0);
+
+    display: grid;
+    place-content: center;
 
     border: 1px solid var(--fg-color);
     border-radius: 1em;
@@ -41,7 +45,7 @@
 
   .brand {
     img {
-      width: 37px;
+      width: 2.8em;
     }
   }
 }

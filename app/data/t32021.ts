@@ -2,6 +2,7 @@ import ImageGallery from "../utils/ImageGallery"
 
 export type Edition = {
     name: string,
+    subtitle?: string,
     images: ImageGallery,
 }
 
@@ -26,22 +27,27 @@ const createImageGallery = () => {
 export const editions: Edition[] = [
     {
         name: 'Václav',
+        subtitle: 'zapékací mísy',
         images: createImageGallery(),
     },
     {
         name: 'Lumír a Čestmír',
+        subtitle: 'mísy na zadělávání těsta',
         images: createImageGallery(),
     },
     {
         name: 'Kilián',
+        subtitle: 'kalíšky na pití',
         images: createImageGallery(),
     },
     {
         name: 'František',
+        subtitle: 'talíř a miska',
         images: createImageGallery(),
     },
     {
         name: 'Rostislav',
+        subtitle: 'oceloryt',
         images: createImageGallery(),
 
     },

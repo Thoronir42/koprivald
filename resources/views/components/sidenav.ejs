@@ -4,13 +4,9 @@
             <img src="images/koprivald.png" alt="Logo Kopřivald"/>
         </a>
     </nav>
-    <nav class="link" style="--order: 1">
-        <a href="#historie">Historie</a>
+    <% sidenavLinks.forEach((link, i) => { %>
+    <nav class="link" style="--order: <%- i + 1 %>">
+        <a href="<%-link.target%>"><%-link.caption%></a>
     </nav>
-    <nav class="link" style="--order: 2">
-        <a href="#projekty">Projekty</a>
-    </nav>
-    <nav class="link" style="--order: 3">
-        <a href="#o-nas">O nás</a>
-    </nav>
+    <% }) %>
 </div>

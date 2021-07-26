@@ -25,10 +25,12 @@
     </p>
 </div>
 
-<div class="content-block middle">
-    <% editions.forEach((edition) => { %>
+<div class="content-block middle editions">
+    <% editions.forEach((edition, i) => { %>
+    <% let className = i % 2 === 0 ? '' : '' %>
     <h2><%- edition.name %></h2>
-    <%- include('components/imageGallery', {images: edition.images}) -%>
+    <div class="subtitle"><%- edition.subtitle %></div>
+    <%- include('components/imageGallery', {images: edition.images, className}) -%>
     <% }) %>
 </div>
 

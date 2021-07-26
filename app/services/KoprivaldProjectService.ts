@@ -20,7 +20,7 @@ export default class KoprivaldProjectService {
             .map((image) => this.imageStatLoader.loadStats(image, gallery.galleryVariants))
 
         return {
-            name: edition.name,
+            ...edition,
             images: await Promise.all(imagePromises)
         }
     }

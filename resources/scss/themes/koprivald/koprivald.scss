@@ -7,17 +7,41 @@ html {
 
 nav.brand {
   font-family: Syne, sans-serif;
-  font-size: 2rem;
 }
 
 h1 {
   font-family: Syne, sans-serif;
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
+
+  + .subtitle {
+    font-size: 1.7em;
+    margin-block-start: -0.75em;
+  }
 }
 
 h2 {
   font-family: Syne, sans-serif;
   font-weight: 800;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+
+  + .subtitle {
+    font-size: 1em;
+    margin-block-start: -1.15em;
+    margin-block-end: 0.5em;
+  }
+}
+
+p {
+  line-height: 1.5;
+}
+
+.subtitle {
+  font-size: 1.5em;
+}
+
+.editions {
+  h2 {
+    margin-block-start: 1.5em;
+  }
 }

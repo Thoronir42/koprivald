@@ -24,7 +24,7 @@ class Marker {
 
 export default {
     markers: [
-        Marker.right('2%', '1.5em', "1792",
+        Marker.right('2%', '1em', "1792",
             "Johann Georg Paulus v dopise zemské radě",
             "„…zdlouhavými nákladnými pokusy o výrobu míšeňského porcelánového nádobí – dosud to neznámého"
             + " produktu mezi domácími artikly – položil jsem konečně podepsaný základ takové továrně, která ke"
@@ -32,13 +32,13 @@ export default {
             + " pozornosti a ujištění o ochraně.“"
         ),
 
-        Marker.right('6%', '5em', "1793",
+        Marker.right('6%', '1.7em', "1793",
             "Zemská rada Paulusovi",
             "„v své podstatě nic jiného než hrnična z poněkud vylepšené hmoty na způsob porcelánové nebo"
             + " tvrdé kameninové.“"
             ),
 
-        Marker.left('12%', '2em', "1824",
+        Marker.left('12%', '5.6em', "1824",
             "první komisař u c. k. inspekce továren",
             "„mezi českými porcelánkami zvláště vyniká slavkovská – dodává stolní soupravy, kávové soupravy"
             + " a hlavičky dýmek. Hmota je čistá, nádobí pečlivě zpracováno a barvy dobré, ceny nízké.“"
