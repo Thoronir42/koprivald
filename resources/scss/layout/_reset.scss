@@ -13,5 +13,7 @@ body {
 
 
 img {
-    background: var(--secondary-900);
+    &:not(.logo) {
+        background: var(--secondary-900);
+    }
 }
