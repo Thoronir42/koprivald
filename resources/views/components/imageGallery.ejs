@@ -1,11 +1,19 @@
-<ul class="image-gallery <%- className %>">
-    <% images.forEach((img) => { %>
-    <li>
-        <img src="<%= img.variants.small.src %>"
+<div class="image-gallery <%- className %>">
+    <div class="items">
+        <% images.forEach((img) => { %>
+            <div class="item" style="--img: url('<%- img.variants.small.src %>')">
+                <!--<img src="<%= img.variants.small.src %>"
              alt="<%= img.caption %>"
              data-full="<%= img.variants.full && img.variants.full.src %>"
              width="<%= img.variants.small.width %>" height="<%= img.variants.small.height %>"
-        >
-    </li>
-    <% }) %>
-</ul>
+        >-->
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="positioner">
+        <% images.forEach((img, i) => { %>
+            <div class="peg <%- i === 0 ? 'active' : '' %>"></div>
+        <% }) %>
+    </div>
+</div>

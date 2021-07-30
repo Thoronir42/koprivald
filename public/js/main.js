@@ -5,6 +5,7 @@ function setClass(className, present, target) {
         target.classList.remove(className)
     }
 }
+
 function toggleHistoryDetail() {
     document.querySelector('.history-detail-prompt').classList.toggle('active')
 }
@@ -110,3 +111,55 @@ setTimeout(function initSidenav() {
     })
 })()
 
+;(function initImageGalleries() {
+    const initGalleryWith = (element) => {
+        const items = element.querySelector('.items')
+        /** @type {HTMLDivElement} */
+        const positionerEl = element.querySelector('.positioner')
+
+        let activeItem = 0
+        const setActiveItem = (n) => {
+            if (n === activeItem) {
+                return
+            }
+
+            activeItem = n
+
+            // positionerEl
+            for (let i = 0; i < positionerEl.children.length; i++) {
+                const peg = positionerEl.children[i]
+
+                if (peg.nodeType === Node.TEXT_NODE) {
+                    return
+                }
+                if (i === n) {
+                    peg.classList.add('active')
+                } else {
+                    peg.classList.remove('active')
+                }
+            }
+
+        }
+
+        const scrollTo = (n) => {
+            const itemEl = items.children[n]
+            const offset = itemEl.offsetLeft - items.offsetLeft
+            items.scrollTo({left: offset, behavior: "smooth"})
+        }
+
+        const updateActiveItem = () => {
+            // This is imprecise as it omits gap...
+            const n = Math.floor(items.scrollLeft / items.clientWidth)
+            setActiveItem(n)
+        }
+        items.addEventListener('scroll', updateActiveItem)
+
+        positionerEl.querySelectorAll('.peg').forEach((pegEl, n) => {
+            pegEl.addEventListener('click', () => scrollTo(n))
+        })
+
+        updateActiveItem()
+    }
+
+    document.querySelectorAll('.image-gallery').forEach((el) => initGalleryWith(el))
+})()

@@ -1,29 +1,59 @@
 .image-gallery {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
+  block-size: 24em;
+  max-block-size: 50vh;
   display: grid;
-  grid-auto-flow: column;
-  gap: 1em;
+  place-content: stretch;
 
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: inline mandatory;
+  > * {
+    grid-column: 1; grid-row: 1;
 
-  li {
-    block-size: 10em;
-
-    img {
-      block-size: 100%;
-      inline-size: auto;
-
-      scroll-snap-align: start;
-    }
   }
 
-  &.tiles {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(auto-fit, 42%);
+  .items {
+    flex: 1;
+
+    display: flex;
+    gap: 1em;
+    overflow-x: scroll;
+
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;  /* Safari and Chrome */
+    }
+
+    overscroll-behavior-x: contain;
+    scroll-snap-type: inline mandatory;
+  }
+
+  .item {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+
+    background: var(--img);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .positioner {
+    z-index: 1;
+    place-self: end center;
+    margin: 0.25em;
+    padding: 0.25em;
+
+    display: flex;
+    gap: 0.25em;
+
+    .peg {
+      width: 1em;
+      height: 1em;
+      border-radius: 50%;
+
+      background: var(--neutral-1000);
+
+      &.active {
+        background: var(--secondary);
+      }
+    }
   }
 }
