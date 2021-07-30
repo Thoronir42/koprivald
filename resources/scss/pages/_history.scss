@@ -1,10 +1,10 @@
-.history-detail-prompt {
+.detail-prompt {
   &.active {
     display: none;
   }
 
   &:not(.active) {
-    ~ .history-detail {
+    ~ .detail-content {
       display: none;
     }
   }

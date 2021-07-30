@@ -19,6 +19,10 @@
               border .25s ease
 ;
 
+  &.primary {
+    --col-primary: #{$primary};
+  }
+
   &:not(.disabled):not(.disabled) {
     cursor: pointer;
   }

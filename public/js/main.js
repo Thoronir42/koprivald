@@ -7,7 +7,7 @@ function setClass(className, present, target) {
 }
 
 function toggleHistoryDetail() {
-    document.querySelector('.history-detail-prompt').classList.toggle('active')
+    document.querySelector('.detail-prompt').classList.toggle('active')
 }
 
 function getUrlTop(/**string*/url) {
