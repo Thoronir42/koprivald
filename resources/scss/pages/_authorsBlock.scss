@@ -1,0 +1,50 @@
+.project-authors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em 0;
+
+  .author {
+    flex: 1 1 300px;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 2em;
+
+    .name {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: 1.6rem;
+    }
+    .role {
+      color: var(--primary);
+    }
+
+    .bio {
+      padding: 0 var(--h-spacing);
+      font-size: 1.2rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .contact-links {
+      margin-top: 1em;
+
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+
+      a {
+        color: var(--neutral-0);
+        font-size: 0.9em;
+      }
+    }
+
+    .picture {
+      width: 100%;
+      padding-bottom: 100%;
+      background: var(--pic);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+}
