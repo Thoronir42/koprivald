@@ -3,6 +3,12 @@
 body {
   font-family: Syne, Open-Sans, sans-serif;
   color: var(--neutral-200);
+
+  --cursor-pointer: url("/images/list-kurzor.png") 16 0;
+}
+
+:is(body, a) {
+  cursor: var(--cursor-pointer), auto;
 }
 
 nav.brand {

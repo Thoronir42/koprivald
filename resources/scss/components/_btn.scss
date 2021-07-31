@@ -24,7 +24,7 @@
   }
 
   &:not(.disabled):not(.disabled) {
-    cursor: pointer;
+    cursor: var(--cursor-pointer);
   }
 
   &.inv-hig {
