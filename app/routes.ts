@@ -11,20 +11,25 @@ const jsTags = [
 
 const routes = Router();
 
+routes.use((req, res, next) => {
+    res.locals.navLinks1 = [
+        {target: '/#historie', caption: 'Historie'},
+        {target: '/#o-nas', caption: 'O nás'},
+    ]
+    res.locals.navLinks2 = [
+        {target: '/#projekty', caption: 'Tvar č. 32021'},
+    ]
+    next()
+})
+
 routes.get('/', async (req, res) => {
     res.locals.bodyComponents = [
-        'components/sidenav',
+        // 'components/sidenav',
     ]
 
     res.locals.jsTags = jsTags
     res.locals.proj = proj
     res.locals.history = await container.getHistoryService().loadHistory()
-    res.locals.sidenavLinks = [
-        {target: '#historie', caption: 'Historie'},
-        {target: '#projekty', caption: 'Tvar č. 32021'},
-        {target: '#o-nas', caption: 'O nás'},
-        {target: '#kontakty', caption: 'Kontakty'},
-    ]
 
     res.render('index')
 })

@@ -60,8 +60,4 @@
       background-position: center;
     }
   }
-
-  > :is(.header, .intro) {
-    padding-inline-end: calc(2em + var(--h-spacing) + 1em);
-  }
 }

@@ -1,0 +1,20 @@
+<div class="hamburger">
+    <button class="menu-toggle">
+        <i></i>
+        <i></i>
+        <i></i>
+    </button>
+
+    <div class="menu">
+        <% navLinks1.forEach((link) => { %>
+        <nav class="link">
+            <a href="<%-link.target%>"><%-link.caption%></a>
+        </nav>
+        <% }) %>
+        <% navLinks2.forEach((link) => { %>
+        <nav class="link">
+            <a href="<%-link.target%>"><%-link.caption%></a>
+        </nav>
+        <% }) %>
+    </div>
+</div>

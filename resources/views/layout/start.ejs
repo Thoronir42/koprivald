@@ -12,7 +12,8 @@
     <title>Kopřivald</title>
 </head>
 <body class="column-layout">
-<%- include('../parts/navbar'); -%>
+<%- include('../layout/navbar'); -%>
+<%- include('../layout/hamburger'); -%>
 <% bodyComponents && bodyComponents.forEach((component) => { %>
     <%- include('../'+component); -%>
 <% }) %>

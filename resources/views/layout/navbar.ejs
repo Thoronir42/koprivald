@@ -1,0 +1,20 @@
+<div class="navbar">
+    <div class="nav-group">
+        <% navLinks1.forEach((link) => { %>
+            <nav class="link">
+                <a href="<%-link.target%>"><%-link.caption%></a>
+            </nav>
+        <% }) %>
+    </div>
+    <nav class="brand">
+        <a href="/"><%= proj.name %></a>
+    </nav>
+
+    <div class="nav-group">
+        <% navLinks2.forEach((link) => { %>
+        <nav class="link">
+            <a href="<%-link.target%>"><%-link.caption%></a>
+        </nav>
+        <% }) %>
+    </div>
+</div>
