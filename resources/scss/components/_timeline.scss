@@ -7,6 +7,10 @@
     display: flex;
     gap: 1.5em;
 
+    @include sm() {
+      flex-direction: column;
+    }
+
     .item {
       display: flex;
       align-items: center;

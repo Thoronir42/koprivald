@@ -34,14 +34,10 @@ footer {
     font-weight: bold;
 
     .party {
-
-      &:not(:first-child) {
-        &:before {
-          display: inline-block;
-          content: '/';
-          margin: 0 0.5em;
-        }
-      }
+      text-align: center;
+    }
+    .separator {
+      margin: 0 0.5em
     }
   }
 }

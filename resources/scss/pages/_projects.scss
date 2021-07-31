@@ -13,6 +13,16 @@
     margin: 0.5em 0;
   }
 
+  .preview {
+    background: var(--img-preview);
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  :is(.header, .intro) {
+    text-align: center;
+  }
+
   @include sm() {
     > * {
       grid-column: 1;
@@ -37,7 +47,8 @@
   }
 
   @include md() {
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 33% 1fr;
+
     > .header {
       margin-top: 4px;
       grid-column: 2;
@@ -46,6 +57,7 @@
 
     > .preview {
       grid-row: span 2;
+      background-position: center;
     }
   }
 
