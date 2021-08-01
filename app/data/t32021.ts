@@ -11,11 +11,10 @@ export const editions: Edition[] = [
         name: 'Václav',
         subtitle: 'zapékací mísy',
         images: new ImageGallery([
-            {file: 'koprivald__12.jpg', alt: ''},
+            {file: 'koprivald__77.jpg', alt: ''},
             {file: 'koprivald__12_2.jpg', alt: ''},
             {file: 'koprivald__13_2.jpg', alt: ''},
             {file: 'koprivald__65.jpg', alt: ''},
-            {file: 'koprivald__77.jpg', alt: ''},
         ])
             .addVariant('/images/koprivald/t32021/vaclav/small/', 'small')
             .addVariant('/images/koprivald/t32021/vaclav/', 'full')
@@ -25,7 +24,6 @@ export const editions: Edition[] = [
         name: 'Lumír a Čestmír',
         subtitle: 'mísy na zadělávání těsta',
         images: new ImageGallery([
-            {file: 'koprivald__28.jpg', alt: ''},
             {file: 'koprivald__28_2.jpg', alt: ''},
             {file: 'koprivald__61 kopie.jpg', alt: ''},
             {file: 'koprivald__63.jpg', alt: ''},
@@ -54,7 +52,6 @@ export const editions: Edition[] = [
         name: 'František',
         subtitle: 'talíř a miska',
         images: new ImageGallery([
-            {file: 'koprivald__44 kopie.jpg', alt: ''},
             {file: 'koprivald__44 kopie_2.jpg', alt: ''},
             {file: 'koprivald__59.jpg', alt: ''},
             {file: 'koprivald__74.jpg', alt: ''},
@@ -77,7 +74,7 @@ export const editions: Edition[] = [
         ,
     },
     {
-        name: 'Varianty tvaru č. 32021',
+        name: 'Varianty Tvaru',
         subtitle: 'oceloryt',
         images: new ImageGallery([
             {file: 'koprivald__70.jpg', alt: ''},

@@ -42,11 +42,11 @@
     padding: 0.25em;
 
     display: flex;
-    gap: 0.25em;
+    gap: 0.5em;
 
     .peg {
-      width: 1em;
-      height: 1em;
+      width: 0.8em;
+      height: 0.8em;
       border-radius: 50%;
 
       background: var(--neutral-1000);
