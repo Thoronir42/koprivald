@@ -6,50 +6,89 @@ export type Edition = {
     images: ImageGallery,
 }
 
-const imageNs = [
-    6, 8, 10, 15, 17, 18, 19,
-    21, 25, 33, 35, 36, 38, 42,
-    44, 48, 49, 50, 51, 53, 54,
-    57, 62, 63, 66,
-]
-const createImageGallery = () => {
-    const images = []
-    const maxImages = Math.round(4 + Math.random() * 7)
-    for (let i = 0; i < maxImages; i++) {
-        const n = imageNs[Math.floor(Math.random() * imageNs.length)]
-        images.push({file: `hostina_${n}.jpg`, alt: 'Hostina ' + n})
-    }
-    return new ImageGallery(images)
-        .addVariant('/images/koprivald/foto/small/', 'small')
-        .addVariant('/images/koprivald/foto/', 'full')
-}
-
 export const editions: Edition[] = [
     {
         name: 'Václav',
         subtitle: 'zapékací mísy',
-        images: createImageGallery(),
+        images: new ImageGallery([
+            {file: 'koprivald__12.jpg', alt: ''},
+            {file: 'koprivald__12_2.jpg', alt: ''},
+            {file: 'koprivald__13_2.jpg', alt: ''},
+            {file: 'koprivald__65.jpg', alt: ''},
+            {file: 'koprivald__77.jpg', alt: ''},
+        ])
+            .addVariant('/images/koprivald/t32021/vaclav/small/', 'small')
+            .addVariant('/images/koprivald/t32021/vaclav/', 'full')
+        ,
     },
     {
         name: 'Lumír a Čestmír',
         subtitle: 'mísy na zadělávání těsta',
-        images: createImageGallery(),
+        images: new ImageGallery([
+            {file: 'koprivald__28.jpg', alt: ''},
+            {file: 'koprivald__28_2.jpg', alt: ''},
+            {file: 'koprivald__61 kopie.jpg', alt: ''},
+            {file: 'koprivald__63.jpg', alt: ''},
+            {file: 'koprivald__67.jpg', alt: ''},
+            {file: 'koprivald__75.jpg', alt: ''},
+        ])
+            .addVariant('/images/koprivald/t32021/lumír čestmír/small/', 'small')
+            .addVariant('/images/koprivald/t32021/lumír čestmír/', 'full')
+        ,
     },
     {
         name: 'Kilián',
         subtitle: 'kalíšky na pití',
-        images: createImageGallery(),
+        images: new ImageGallery([
+            {file: 'koprivald__6_2.jpg', alt: ''},
+            {file: 'koprivald__8_2.jpg', alt: ''},
+            {file: 'koprivald__55.jpg', alt: ''},
+            {file: 'koprivald__57.jpg', alt: ''},
+            {file: 'koprivald__60.jpg', alt: ''},
+        ])
+            .addVariant('/images/koprivald/t32021/kilián/small/', 'small')
+            .addVariant('/images/koprivald/t32021/kilián/', 'full')
+        ,
     },
     {
         name: 'František',
         subtitle: 'talíř a miska',
-        images: createImageGallery(),
+        images: new ImageGallery([
+            {file: 'koprivald__44 kopie.jpg', alt: ''},
+            {file: 'koprivald__44 kopie_2.jpg', alt: ''},
+            {file: 'koprivald__59.jpg', alt: ''},
+            {file: 'koprivald__74.jpg', alt: ''},
+        ])
+            .addVariant('/images/koprivald/t32021/františek/small/', 'small')
+            .addVariant('/images/koprivald/t32021/františek/', 'full')
+        ,
     },
     {
         name: 'Rostislav',
         subtitle: 'oceloryt',
-        images: createImageGallery(),
-
+        images: new ImageGallery([
+            {file: 'koprivald__11_2.jpg', alt: ''},
+            {file: 'koprivald__15_2.jpg', alt: ''},
+            {file: 'koprivald__69.jpg', alt: ''},
+            {file: 'koprivald__80.jpg', alt: ''},
+        ])
+            .addVariant('/images/koprivald/t32021/rostislav/small/', 'small')
+            .addVariant('/images/koprivald/t32021/rostislav/', 'full')
+        ,
+    },
+    {
+        name: 'Varianty tvaru č. 32021',
+        subtitle: 'oceloryt',
+        images: new ImageGallery([
+            {file: 'koprivald__70.jpg', alt: ''},
+            {file: 'koprivald__72.jpg', alt: ''},
+            {file: 'koprivald__76.jpg', alt: ''},
+            {file: 'koprivald__78.jpg', alt: ''},
+            {file: 'koprivald__79.jpg', alt: ''},
+        ])
+            .addVariant('/images/koprivald/t32021/komba/small/', 'small')
+            .addVariant('/images/koprivald/t32021/komba/', 'full')
+        ,
     },
 
 ]
