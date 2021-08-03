@@ -4,3 +4,15 @@
 .text-secondary {
   color: $secondary;
 }
+
+.detail-prompt {
+  &.active {
+    display: none;
+  }
+
+  &:not(.active) {
+    ~ .detail-content {
+      display: none;
+    }
+  }
+}

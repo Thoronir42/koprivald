@@ -29,7 +29,6 @@
 
   .graph {
     place-self: stretch;
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,11 +43,15 @@
       --axis-stretch: -1rem;
       display: grid;
 
+      inline-size: 80%;
+
       > * {
         grid-column: 1; grid-row: 1;
       }
       img {
         background-color: unset;
+        width: 100%;
+        height: auto;
       }
       .axis {
         place-self: stretch center;
@@ -56,25 +59,39 @@
         margin-block-end: var(--axis-stretch);
         border-left: 4px dashed var(--neutral-300);
         border-right: 7px solid transparent;
+
+        @include sm() {
+          border-left-width: 2px;
+        }
       }
     }
   }
 
+  .markers {
+    position: relative;
+  }
+
   .marker {
+    --total-offset: calc(50% + var(--offset));
     position: absolute;
     top: var(--top);
 
+    @include sm() {
+      --line-width: 0 !important;
+      --total-offset: calc((50% + var(--offset) / 2));
+    }
+
     &[data-placement="right"] {
-      left: calc(50% + var(--offset));
+      left: var(--total-offset);
     }
     &[data-placement="left"] {
-      right: calc(50% + var(--offset));
+      right: var(--total-offset);
     }
 
     &[data-placement="right"] .header:before, &[data-placement="left"] .header:after {
       display: block;
       content: '';
-      width: 4em;
+      width: var(--line-width, 4em);
       border-bottom: 2px dotted var(--secondary);
     }
 
@@ -83,9 +100,52 @@
       align-items: center;
       gap: 0.5em;
     }
+    .label {
+      font-weight: bold;
+      padding: 0.25em 0.125em;
+      background: rgba(white, 0.75%);
+    }
 
     .content {
       display: none;
     }
+  }
+
+  .marker-pictures {
+    .header {
+      color: var(--primary);
+    }
+  }
+}
+
+.history-tooltip-content {
+  padding: 0.75em;
+
+  .caption {
+    color: var(--primary);
+    font-weight: bold;
+  }
+
+  .images {
+    margin: 1em 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25em;
+  }
+
+  .image {
+    height: 8em;
+    width: auto;
+    background: none;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+
+  > *:first-child {
+    margin-top: 0;
   }
 }

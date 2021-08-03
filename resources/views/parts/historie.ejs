@@ -36,18 +36,18 @@
         </div>
     </div>
     <div class="graph">
-        <span class="year">1792</span>
+        <span class="year"><%- timeline.start %></span>
         <div class="image-content">
+            <img src="/images/graf.svg" alt="Časová osa" width="420" height="4335">
             <div class="axis"></div>
-            <img src="/images/graf.png" alt="Časová osa" width="420" height="4335">
+            <div class="markers">
+                <% timeline.markers.forEach((marker) => { %>
+                    <%- include('../components/historyMarker', {marker}) -%>
+                <% }) %>
+            </div>
         </div>
 
-
-        <% history.markers.forEach((marker) => { %>
-            <%- include('../components/historyMarker', {marker}) -%>
-        <% }) %>
-
-        <span class="year">2021</span>
+        <span class="year"><%- timeline.end %></span>
     </div>
 
 </div>

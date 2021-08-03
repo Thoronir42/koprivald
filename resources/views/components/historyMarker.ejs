@@ -1,10 +1,44 @@
-<div class="marker" data-placement="<%= marker.position.placement %>"
-     style="--top: <%= marker.position.top %>; --offset: <%= marker.position.offset %>;">
+<%
+function getMarkerStyles(marker) {
+    const styles = {
+        '--top': marker.position.top,
+        '--offset': marker.position.offset
+    }
+    if (marker.position.lineWidth) {
+        styles['--line-width'] = marker.position.lineWidth
+    }
+
+    return Object.entries(styles).map(([prop, value]) => prop + ':' + value).join('; ')
+}
+
+function getContentClasses(marker) {
+    if (marker.content.images && marker.content.images.length && !marker.content.text) {
+        return ' ' + 'image-only'
+    }
+
+    return ''
+}
+%>
+
+<div class="marker<%- marker.position.class ? ' ' + marker.position.class : '' %>"
+     data-placement="<%= marker.position.placement %>"
+     style="<%= getMarkerStyles(marker) %>">
     <div class="header">
-        <span class="label"><%= marker.label %></span>
+        <span class="label"><%= marker.content.label %></span>
     </div>
-    <div class="content">
-        <span class="caption"><%= marker.caption %></span>
-        <p class="snippet"><%= marker.content %></p>
+    <div class="content<%- getContentClasses(marker) %>">
+        <% if (marker.content.caption) { %>
+            <span class="caption"><%= marker.content.caption %></span>
+        <% } %>
+        <% if (marker.content.text) { %>
+            <p class="snippet"><%= marker.content.text %></p>
+        <% } %>
+        <% if (marker.content.images) { %>
+            <div class="images">
+                <% for (const image of marker.content.images) { %>
+                    <img class="image" src="<%- image.variants.default.src %>" alt="<%- image.alt %>">
+                <% } %>
+            </div>
+        <% } %>
     </div>
 </div>

@@ -30,6 +30,7 @@ routes.get('/', async (req, res) => {
     res.locals.jsTags = jsTags
     res.locals.proj = proj
     res.locals.history = await container.getHistoryService().loadHistory()
+    res.locals.timeline = res.locals.history.timeline
 
     res.render('index')
 })

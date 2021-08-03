@@ -107,6 +107,8 @@ setTimeout(function initSidenav() {
         const t = tippy(label, {
             content: content,
             theme: 'koprivald',
+            interactive: true,
+            appendTo: document.body,
         })
     })
 })()
