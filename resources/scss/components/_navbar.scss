@@ -90,6 +90,13 @@
             text-decoration: none;
             color: var(--neutral-0);
         }
+
+        &.active {
+            a {
+                color: var(--primary);
+                text-decoration: underline;
+            }
+        }
     }
 
     .brand {

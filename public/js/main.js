@@ -15,7 +15,7 @@ function getUrlTop(/**string*/url) {
     return iHash === -1 ? url : url.substring(0, iHash)
 }
 
-function setActiveSection(/**HTMLHeadingElement?*/ section) {
+function setActiveSection(container, /**HTMLHeadingElement?*/ section) {
     let title = "Kopřivald"
     let href = getUrlTop(location.href)
     let hash
@@ -24,8 +24,9 @@ function setActiveSection(/**HTMLHeadingElement?*/ section) {
         href += (hash = '#' + section.id)
     }
 
-    document.querySelectorAll('.sidenav .link').forEach((navEl) => {
-        const active = navEl.querySelector('a').getAttribute('href') === hash
+    container.querySelectorAll('.link').forEach((navEl) => {
+        let linkHref = navEl.querySelector('a').getAttribute('href');
+        const active = linkHref &&  linkHref.includes(hash)
         setClass('active', active, navEl)
     })
 
@@ -37,8 +38,9 @@ function setActiveSection(/**HTMLHeadingElement?*/ section) {
 
 // Leave some time for browser to scroll to anchor on new page load
 setTimeout(function initSidenav() {
-    const sidenavEl = document.querySelector('.sidenav')
-    if (!sidenavEl) {
+    const sidenavEl = document.querySelector('.navbar')
+    // if we're not on the homepage, use default behavior
+    if (!sidenavEl || location.pathname !== '/') {
         return
     }
 
@@ -47,7 +49,6 @@ setTimeout(function initSidenav() {
         e.preventDefault()
         window.scrollTo({
             top: 0,
-            behavior: "smooth",
         })
     })
 
@@ -71,7 +72,8 @@ setTimeout(function initSidenav() {
         let activeSection
         for (let i = window.scrollTargets.length - 1; i >= 0; i--) {
             const el = scrollTargets[i]
-            if (el.offsetTop - 20 <= window.scrollY) {
+            // compensate for scroll-margin
+            if (el.offsetTop - 128 <= window.scrollY) {
                 activeSection = el
                 break
             }
@@ -79,9 +81,9 @@ setTimeout(function initSidenav() {
 
 
         if (!activeSection) {
-            location.hash && setActiveSection()
+            location.hash && setActiveSection(sidenavEl)
         } else {
-            setActiveSection(activeSection)
+            setActiveSection(sidenavEl, activeSection)
         }
     }
 
