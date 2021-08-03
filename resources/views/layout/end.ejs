@@ -1,11 +1,11 @@
 
 </main>
 
+<%- include('./footer') %>
+
 <% jsTags.forEach((tag) => { %>
     <script src="<%= tag.src %>"></script>
 <% }) %>
-
-<%- include('./footer') %>
 
 </body>
 </html>

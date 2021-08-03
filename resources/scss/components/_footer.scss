@@ -18,6 +18,10 @@ footer {
     a {
       color: inherit;
     }
+
+    @include sm() {
+      font-size: 0.8em;
+    }
   }
 
   .logo {

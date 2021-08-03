@@ -36,4 +36,8 @@ $scrollbarWidth: 15px;
   &:not(:first-child) {
     margin-block-start: 4rem;
   }
+
+  .logo {
+    max-width: 100%;
+  }
 }

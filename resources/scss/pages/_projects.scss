@@ -21,6 +21,10 @@
   }
   :is(.header, .intro) {
     text-align: center;
+
+    @include md() {
+      padding: 0 var(--h-spacing);
+    }
   }
 
   @include sm() {
