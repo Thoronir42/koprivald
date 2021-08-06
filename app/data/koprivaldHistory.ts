@@ -64,7 +64,7 @@ const createImageGallery = (files: Image[]): ImageGallery => new ImageGallery(fi
 
 const timeline = new TimelineContainer(1792, 2021)
     .addMarker('right', 1792, {
-            offset: '2%',
+            offset: '0%',
         },
         {
             caption: "Johann Georg Paulus v dopise zemské radě",
@@ -75,7 +75,7 @@ const timeline = new TimelineContainer(1792, 2021)
         },
     )
     .addMarker('left', 1793, {
-            offset: '5.2%',
+            offset: '4.2%',
         },
         {
             caption: "Zemská rada Paulusovi",
@@ -84,12 +84,21 @@ const timeline = new TimelineContainer(1792, 2021)
         },
     )
     .addMarker('right', 1812, {
-            offset: '13%',
-            class: 'marker-pictures',
+            offset: '12%',
         },
         {
             gallery: createImageGallery([
-                {file: '4a.PNG', alt: "4a"},
+                {file: '4a.png', alt: "4a", placement: {size: '11rem', bottom: '2rem', left: '0.75rem'}},
+            ]),
+        },
+    )
+    .addMarker('left', 1820, {
+            offset: '24%',
+            lineWidth: '1em',
+        },
+        {
+            gallery: createImageGallery([
+                {file: '2.png', alt: "2", placement: {size: '9.5rem', bottom: '2rem', right: '0.35rem'}},
             ]),
         },
     )
@@ -104,7 +113,7 @@ const timeline = new TimelineContainer(1792, 2021)
 
             gallery: createImageGallery([
                 {file: '3a.PNG', alt: "3a"},
-                {file: '3b.PNG', alt: "3b"},
+                {file: '3b-combo.PNG', alt: "3b"},
             ]),
         },
     )
@@ -116,38 +125,34 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "vůdčí postavení mezi českými porcelánkami, vrcholné období produkce po estetické kvalitě malířského období vrcholí",
             text: "„Porcelán je skvostným materiálem a jeho kvality prohlubují naši skvělí drobnomalíři. Své mistrovství ukazují na květinových a mytologických námětech či vedutách.“",
             gallery: createImageGallery([
-                {file: '8a.PNG', alt: "8a"},
+                {file: '8a-combo.PNG', alt: "8a"},
             ]),
         })
     .addMarker('right', 1835, {
-            offset: "26.3%",
+            offset: "28%",
         },
         {
             caption: "Druhé rokoko, neboli období plastické",
             text: "„Malba se již nenosí, nyní hýbe šlechtickým dvorem důmyslné a zdobné tvarování.“ Šlechta začíná ovlivňovat svými penězi výrobu, obrací se k zašlé slávě buržoazie",
             gallery: createImageGallery([
-                {file: '6a.PNG', alt: "6a"},
+                {file: '6a.png', alt: "6a"},
             ]),
         })
     .addMarker('right', 1850, {
             offset: "0px",
-            lineWidth: '7.8em',
+            lineWidth: '5.8em',
+            class: '',
         },
         {
             caption: "zlom století je zlomem ke kapitalistické tendenci podnikání",
             text: "„Náš skvělý Baron Haas a umělecká kvalita výroby vykrváceli v boji s touhou po zisku, produkcí ostatních továren i spotřebiteli.“",
-            gallery: createImageGallery([
-                {file: '5a.PNG', alt: "5a"},
-                {file: '5b.PNG', alt: "5b"},
-            ]),
-            // TODO: repeat the plate bar: 5a+b, 3a+b namnožené jako z pásové výroby talířky jsou podšálky
         })
     .addMarker('right', 1872, {
             offset: "5%",
         },
         {
             caption: "výstava ve Vídni",
-            text: "„ornament nabízí půvabné efekty, tvary jsou zhrublé a inspirace rozmělněné“ orientalizující soupravu doplit ilu",
+            text: "„ornament nabízí půvabné efekty, tvary jsou zhrublé a inspirace rozmělněné“",
         })
     .addMarker('right', 1900, {
             offset: "3%",
@@ -157,40 +162,49 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "Haas & Czjzek",
             text: "„inspirujme se v zahraničí novým krásným slohem, secesí!“",
             gallery: createImageGallery([
-                {file: '7a.PNG', alt: "7a"},
-                {file: '7b.PNG', alt: "7b"},
-                {file: '7c.PNG', alt: "7c"},
-                {file: '7d.PNG', alt: "7d"},
+                {file: '7a.png', alt: "7a"},
+                {file: '7b.png', alt: "7b"},
+                {file: '7c-combo.png', alt: "7c"},
+                {file: '7d.png', alt: "7d", placement: {size: '3rem'}},
             ]),
         })
     .addMarker('left', 1908, {
-            offset: "6.9%",
+            offset: "6%",
         },
         {
             caption: "František Josef I.",
             text: "„ku příležitosti našeho výročí 60.roku vlády vás ustavuji šlechtici, barony Haasem von Hasenfeld & Hans Czjzkem Edler von Smidaich.“",
         })
     .addMarker('right', 1915, {
-            offset: "29%",
+            offset: "28%",
         },
         {
             caption: "přizpůsobení se vkusu zákazníků rovná se estetický úpadek a velký komerční úspěch",
             gallery: createImageGallery([
-                {file: '9a.PNG', alt: "9a"},
+                {file: '9a-combo.PNG', alt: "9a"},
                 {file: '9b.PNG', alt: "9b"},
+            ]),
+        })
+    .addMarker('left', 1930, {
+            offset: "0%",
+            lineWidth: "8em",
+            class: 'replace-label',
+        },
+        {
+            gallery: createImageGallery([
+                {file: 'kovbojka.png', alt: "kovbojka", placement: {size: "12rem", sizeMd: "15rem", right: "0", bottom: "-4rem"}},
             ]),
         })
     .addMarker('right', 1930, {
             offset: "0%",
-            lineWidth: "8em",
+            lineWidth: "3.5em",
         },
         {
             caption: "Haas & Czjzek",
             text: "„děkujeme našim zaměstnancům, díky nimž výroba kvete i přes nápor světové hospodářské krize“",
             gallery: createImageGallery([
-                // TODO: Place kovbojka
-                {file: '10a.PNG', alt: "10a"},
-                {file: '10b.PNG', alt: "10b"},
+                {file: '10b-combo.PNG', alt: "10b"},
+                {file: '10a-combo.PNG', alt: "10a"},
             ]),
         })
     .addMarker('left', 1945, {
@@ -202,14 +216,14 @@ const timeline = new TimelineContainer(1792, 2021)
             text: "„Znárodněno.“",
         })
     .addMarker('right', 1951, {
-            offset: "31%",
-        lineWidth: "1em",
+            offset: "28%",
+            lineWidth: "2em",
         },
         {
             caption: "Ministerstvo průmyslu",
             text: "„jelikož je výnos prachbídný a náhradou specializovaných německých pracovníků jsou nekompetentní dělníci, reorganizujeme znovu uspořádání závodu. Poptávku na domácím trhnu je třeba ukojit, dodávat celé jídelní sady a sáhnout po oblíbených tvarech s velkým odbytem“",
             gallery: createImageGallery([
-                {file: '1a.PNG', alt: "1a"},
+                {file: '1a.png', alt: "1a"},
             ]),
         })
     .addMarker('right', 1955, {
@@ -220,16 +234,19 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "Usnesení vlády č. 2 371",
             text: "„význam tohoto průmyslu pro potřeby národního hospodářství byl až dosud podceňován tak, že průmysl ten zaostal za světovou úrovní!“",
             gallery: createImageGallery([
-                {file: '11a.PNG', alt: "11a"},
+                {file: '11a.png', alt: "11a"},
             ]),
         })
-    .addMarker("right", 1958, {
-            offset: "40%",
-        lineWidth: "0.75em",
+    .addMarker("left", 1958, {
+            offset: "-41.2%",
+            lineWidth: "1em",
         },
         {
             caption: "světová výstava EXPO Brusel",
             text: "Grand Prix pro československou expozici 11",
+            gallery: createImageGallery([
+                {file: '8.png', alt: "11a"},
+            ]),
         })
     .addMarker("right", 1977, {
             offset: "12%",
@@ -238,10 +255,12 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "Královna Alžběta II.",
             text: "„Objednáváme ve vaší vyhlášené firmě stolní výbavu k výročí naší stříbrné svatby“",
         })
-    .addMarker('left', 1989, {
-            offset: "20%",
+    .addMarker('left', 1985.325, {
+            offset: "14.75%",
+            lineWidth: '6em',
         },
         {
+            label: "1989",
             caption: "Sametová revoluce",
             text: "privatizace",
         })
@@ -250,15 +269,15 @@ const timeline = new TimelineContainer(1792, 2021)
         },
         {
             gallery: createImageGallery([
-                {file: '12a.PNG', alt: "12a"},
+                {file: '12a-combo.PNG', alt: "12a", placement: {size: "12em", left: "-0.75em", top: "-1.5em"}},
             ]),
         })
     .addMarker('left', 2009, {
-            offset: "4%",
+            offset: "3.5%",
         },
         {
             caption: "velký ruský zákazník",
-            text: "„Kupujeme vaši krasivaje balšoje fabriku!",
+            text: "„Kupujeme vaši krasivaje balšoje fabriku!“",
         })
     .addMarker('left', 2013.5, {
             offset: "4%",
@@ -274,10 +293,10 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "Michal Prokop",
             text: "„Stěhujeme se s malým kouskem Horního Slavkova do Příchovic.“",
             gallery: createImageGallery([
-                {file: '13a.PNG', alt: "13a"},
+                {file: '13a-combo.PNG', alt: "13a"},
             ]),
         })
-    .addMarker('left', 2020.3, {
+    .addMarker('left', 2020.9, {
             offset: "4.6%",
         },
         {

@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap');
-
+@import "../../mixins/breakpoints";
 body {
   font-family: Syne, Open-Sans, sans-serif;
   color: var(--neutral-200);
 
-  --cursor-pointer: url("/images/list-kurzor.png") 16 0;
+  --cursor-pointer: url("/images/list-kurzor.png") 10 0;
 }
 
 :is(body, a) {
@@ -47,7 +47,11 @@ p {
 }
 
 .editions {
-  h2 {
-    margin-block-start: 1.5em;
+  h2:not(:first-child) {
+    margin-block-start: 2.5em;
+
+    @include md() {
+      margin-block-start: 4em;
+    }
   }
 }

@@ -1,0 +1,82 @@
+.markers {
+  --default-img-size: 4rem;
+
+  position: relative;
+}
+
+.marker {
+  --line-width: 4em; --line-c: 1;
+
+  --total-offset: calc(50% + var(--offset));
+  --label-offset: calc(var(--line-width) * var(--line-c) + 0.25em);
+
+  position: absolute;
+  top: var(--top);
+
+  @include sm() {
+    --line-c: 0.25;
+  }
+
+  &[data-placement="right"] {
+    left: var(--total-offset);
+
+    .header .label {
+      left: var(--label-offset);
+    }
+  }
+  &[data-placement="left"], .header.label {
+    right: var(--total-offset);
+    .header .label {
+      right: var(--label-offset);
+    }
+  }
+
+  &[data-placement="right"] .header:before, &[data-placement="left"] .header:after {
+    display: block;
+    content: '';
+    width: calc(var(--line-width) * var(--line-c));
+    border-bottom: 2px dotted var(--secondary);
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .label {
+    position: absolute;
+    font-weight: bold;
+    padding: 0.25em 0.125em;
+    white-space: nowrap;
+
+    background: rgba(white, 0.85%);
+    box-shadow: rgba(white, 0.85%) 0 0 4px 4px;
+    border-radius: 0.25em;
+
+    .image {
+      position: absolute;
+    }
+  }
+
+  &:not(.replace-label) {
+    @include sm() {
+      .images {
+        display: none;
+      }
+    }
+  }
+
+  .content {
+    display: none;
+  }
+}
+
+.marker-pictures {
+  .header {
+    color: var(--primary);
+
+    @include md() {
+      pointer-events: none;
+    }
+  }
+}

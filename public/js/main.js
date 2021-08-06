@@ -106,11 +106,29 @@ setTimeout(function initSidenav() {
         content.classList.remove('content')
         content.classList.add('history-tooltip-content')
 
+        const singleChild = content.children.length === 1 && content.children[0]
+        if (singleChild && singleChild.className === 'images') {
+            if (markerEl.classList.contains('replace-label')) {
+                label.innerHTML = ''
+            }
+            label.classList.add('label-image')
+            const labelImages = document.createElement('div')
+            label.appendChild(labelImages)
+            labelImages.outerHTML = singleChild.outerHTML
+            content.classList.add('images-blown-out')
+        }
+
+        let maxWidth
+        if (markerEl.classList.contains('wide-tooltip')) {
+            content.classList.add('wide-tooltip')
+            maxWidth = '95vw';
+        }
         const t = tippy(label, {
             content: content,
             theme: 'koprivald',
             interactive: true,
             appendTo: document.body,
+            maxWidth,
         })
     })
 })()

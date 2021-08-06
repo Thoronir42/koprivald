@@ -1,6 +1,14 @@
 export type Image = {
     file: string,
     alt: string,
+    placement?: {
+        size: string,
+        sizeMd?: string,
+        top?: string,
+        left?: string,
+        right?: string,
+        bottom?: string,
+    },
 
     variants?: {
         [name: string]: ImageVariant,

@@ -1,12 +1,11 @@
 .image-gallery {
-  block-size: 24em;
-  max-block-size: 50vh;
+  block-size: 60vw;
+  max-block-size: 45vh;
   display: grid;
   place-content: stretch;
 
   > * {
     grid-column: 1; grid-row: 1;
-
   }
 
   .items {
@@ -39,21 +38,27 @@
     z-index: 1;
     place-self: end center;
     margin: 0.25em;
-    padding: 0.25em;
 
     display: flex;
-    gap: 0.5em;
+    gap: 0.1em;
 
     .peg {
-      width: 0.8em;
-      height: 0.8em;
-      border-radius: 50%;
+      padding: 0.25em;
 
-      background: var(--neutral-1000);
-
+      --color: var(--neutral-1000);
       &.active {
-        background: var(--secondary);
+        --color: var(--secondary);
       }
+
+      .body {
+        width: 0.8em;
+        height: 0.8em;
+        border-radius: 50%;
+        background: var(--color);
+
+        transition: background 0.1s;
+      }
+
     }
   }
 }

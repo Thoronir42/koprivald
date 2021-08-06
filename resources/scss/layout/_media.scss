@@ -1,0 +1,11 @@
+.display-hoverable {
+  @media (hover: none) {
+    display: none;
+  }
+}
+
+.display-non-hoverable {
+  @media (hover: hover) {
+    display: none;
+  }
+}

@@ -1,9 +1,4 @@
 .hamburger {
-  z-index: 50;
-  position: fixed;
-  top: 1.6em;
-  left: 1em;
-
   .menu-toggle {
     width: 2.5em;
     height: 2.5em;
@@ -26,7 +21,10 @@
   }
 
   .menu {
-    margin-block-start: 1em;
+    position: absolute;
+    top: 2.6em;
+    left: 1em;
+
     inline-size: 200px;
 
     background: var(--neutral-1000);

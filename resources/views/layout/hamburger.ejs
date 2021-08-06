@@ -1,4 +1,4 @@
-<div class="hamburger">
+<div class="hamburger" tabindex="0">
     <button class="menu-toggle">
         <i></i>
         <i></i>
@@ -7,12 +7,12 @@
 
     <div class="menu">
         <% navLinks1.forEach((link) => { %>
-        <nav class="link">
+        <nav>
             <a href="<%-link.target%>"><%-link.caption%></a>
         </nav>
         <% }) %>
         <% navLinks2.forEach((link) => { %>
-        <nav class="link">
+        <nav>
             <a href="<%-link.target%>"><%-link.caption%></a>
         </nav>
         <% }) %>

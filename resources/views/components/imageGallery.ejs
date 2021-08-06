@@ -13,7 +13,9 @@
 
     <div class="positioner">
         <% images.forEach((img, i) => { %>
-            <div class="peg <%- i === 0 ? 'active' : '' %>"></div>
+            <div class="peg <%- i === 0 ? 'active' : '' %>">
+                <div class="body"></div>
+            </div>
         <% }) %>
     </div>
 </div>

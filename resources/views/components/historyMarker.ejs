@@ -1,4 +1,16 @@
 <%
+function getMarkerClasses(marker) {
+    let classes = ''
+    if (marker.position.class) {
+        classes += ' ' + marker.position.class
+    }
+
+    if (!marker.content.text && !marker.content.caption && marker.content.images && marker.content.images.length) {
+        classes += ' marker-pictures'
+    }
+
+    return classes
+}
 function getMarkerStyles(marker) {
     const styles = {
         '--top': marker.position.top,
@@ -18,13 +30,29 @@ function getContentClasses(marker) {
 
     return ''
 }
+
+function getImageStyles(image) {
+    return Object.entries(image.placement)
+            .map(([name, value]) => {
+                let prop
+                if (name === 'size') {
+                    prop = '--size'
+                } else if (name === 'sizeMd') {
+                    prop = '--size-md'
+                } else {
+                    prop = name
+                }
+                return `${prop}: ${value}`;
+            }).join(';');
+}
 %>
 
-<div class="marker<%- marker.position.class ? ' ' + marker.position.class : '' %>"
+<div class="marker<%- getMarkerClasses(marker) %>"
      data-placement="<%= marker.position.placement %>"
      style="<%= getMarkerStyles(marker) %>">
     <div class="header">
         <span class="label"><%= marker.content.label %></span>
+
     </div>
     <div class="content<%- getContentClasses(marker) %>">
         <% if (marker.content.caption) { %>
@@ -36,7 +64,9 @@ function getContentClasses(marker) {
         <% if (marker.content.images) { %>
             <div class="images">
                 <% for (const image of marker.content.images) { %>
-                    <img class="image" src="<%- image.variants.default.src %>" alt="<%- image.alt %>">
+                    <img class="image" src="<%- image.variants.default.src %>" alt="<%- image.alt %>"
+                         <% if(image.placement) { %> style="<%-getImageStyles(image)%>" <% } %>
+                    />
                 <% } %>
             </div>
         <% } %>
