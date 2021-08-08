@@ -64,7 +64,7 @@ function getImageStyles(image) {
         <% if (marker.content.images) { %>
             <div class="images">
                 <% for (const image of marker.content.images) { %>
-                    <img class="image" src="<%- image.variants.default.src %>" alt="<%- image.alt %>"
+                    <img loading="lazy" class="image" src="<%- image.variants.default.src %>" alt="<%- image.alt %>"
                          <% if(image.placement) { %> style="<%-getImageStyles(image)%>" <% } %>
                     />
                 <% } %>

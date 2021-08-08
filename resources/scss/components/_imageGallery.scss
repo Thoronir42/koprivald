@@ -1,8 +1,12 @@
 .image-gallery {
-  block-size: 60vw;
-  max-block-size: 45vh;
+  block-size: 70vw;
+  max-block-size: 55vh;
   display: grid;
   place-content: stretch;
+
+  @media (max-height: 400px) {
+    max-block-size: 80vh;
+  }
 
   > * {
     grid-column: 1; grid-row: 1;

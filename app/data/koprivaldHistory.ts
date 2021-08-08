@@ -164,7 +164,7 @@ const timeline = new TimelineContainer(1792, 2021)
             gallery: createImageGallery([
                 {file: '7a.png', alt: "7a"},
                 {file: '7b.png', alt: "7b"},
-                {file: '7c-combo.png', alt: "7c"},
+                {file: '7c-combo.png', alt: "7c", placement: {size: "6rem"}},
                 {file: '7d.png', alt: "7d", placement: {size: '3rem'}},
             ]),
         })

@@ -73,17 +73,21 @@
     }
 
     .image-roll {
-      --size: 5.5em;
+      --size: 3em;
 
       position: absolute;
       align-self: center;
-      top: 23%;
+      top: 24.5%;
       z-index: -1;
 
       width: 100vw;
       height: var(--size);
 
       overflow: hidden;
+
+      @include md() {
+        --size: 5.5em;
+      }
 
       .stack {
         display: inline-grid;

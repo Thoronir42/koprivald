@@ -11,7 +11,10 @@
 
     <meta name="author" content="Štěpán Ševčík <stepan.sevcik419@gmail.com>">
 
-    <link rel="stylesheet" href="/css/main.css">
+    <%  styleSheets.forEach((styleSheet) => { %>
+    <link rel="stylesheet" href="<%- styleSheet.href %>">
+    <% }) %>
+
 
     <title>Kopřivald</title>
 </head>
