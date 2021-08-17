@@ -3,6 +3,7 @@ import ImageGallery, {Image} from "../utils/ImageGallery"
 type PositionOptions = {
     offset: string,
     lineWidth?: string,
+    lineWidthSm?: string,
     class?: string,
 }
 type MarkerPlacement = 'left' | 'right'
@@ -94,7 +95,7 @@ const timeline = new TimelineContainer(1792, 2021)
     )
     .addMarker('left', 1820, {
             offset: '24%',
-            lineWidth: '1em',
+            lineWidth: '2.5em',
         },
         {
             gallery: createImageGallery([
@@ -104,7 +105,7 @@ const timeline = new TimelineContainer(1792, 2021)
     )
     .addMarker('left', 1824, {
             offset: '29.5%',
-            lineWidth: '6vw',
+            lineWidth: '2em',
         },
         {
             caption: "první komisař u c. k. inspekce továren",
@@ -112,8 +113,8 @@ const timeline = new TimelineContainer(1792, 2021)
                 + " a hlavičky dýmek. Hmota je čistá, nádobí pečlivě zpracováno a barvy dobré, ceny nízké.“",
 
             gallery: createImageGallery([
-                {file: '3a.PNG', alt: "3a"},
-                {file: '3b-combo.PNG', alt: "3b"},
+                {file: '3a.png', alt: "3a"},
+                {file: '3b-combo.png', alt: "3b"},
             ]),
         },
     )
@@ -125,7 +126,7 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "vůdčí postavení mezi českými porcelánkami, vrcholné období produkce po estetické kvalitě malířského období vrcholí",
             text: "„Porcelán je skvostným materiálem a jeho kvality prohlubují naši skvělí drobnomalíři. Své mistrovství ukazují na květinových a mytologických námětech či vedutách.“",
             gallery: createImageGallery([
-                {file: '8a-combo.PNG', alt: "8a"},
+                {file: '8a-combo.png', alt: "8a"},
             ]),
         })
     .addMarker('right', 1835, {
@@ -140,8 +141,8 @@ const timeline = new TimelineContainer(1792, 2021)
         })
     .addMarker('right', 1850, {
             offset: "0px",
-            lineWidth: '5.8em',
-            class: '',
+            lineWidth: '4em',
+            lineWidthSm: '2.5em',
         },
         {
             caption: "zlom století je zlomem ke kapitalistické tendenci podnikání",
@@ -149,6 +150,7 @@ const timeline = new TimelineContainer(1792, 2021)
         })
     .addMarker('right', 1872, {
             offset: "5%",
+            lineWidth: '3.5em',
         },
         {
             caption: "výstava ve Vídni",
@@ -156,7 +158,8 @@ const timeline = new TimelineContainer(1792, 2021)
         })
     .addMarker('right', 1900, {
             offset: "3%",
-            lineWidth: "6em",
+            lineWidthSm: "12vw",
+            lineWidth: "5em",
         },
         {
             caption: "Haas & Czjzek",
@@ -177,22 +180,23 @@ const timeline = new TimelineContainer(1792, 2021)
         })
     .addMarker('right', 1915, {
             offset: "28%",
+            lineWidthSm: '3.2em',
         },
         {
             caption: "přizpůsobení se vkusu zákazníků rovná se estetický úpadek a velký komerční úspěch",
             gallery: createImageGallery([
-                {file: '9a-combo.PNG', alt: "9a"},
-                {file: '9b.PNG', alt: "9b"},
+                {file: '9a-combo.png', alt: "9a"},
+                {file: '9b.png', alt: "9b"},
             ]),
         })
     .addMarker('left', 1930, {
             offset: "0%",
-            lineWidth: "8em",
+            lineWidth: "9.5em",
             class: 'replace-label',
         },
         {
             gallery: createImageGallery([
-                {file: 'kovbojka.png', alt: "kovbojka", placement: {size: "12rem", sizeMd: "15rem", right: "0", bottom: "-4rem"}},
+                {file: 'kovbojka.png', alt: "kovbojka", placement: {size: "12rem", sizeMd: "15rem", right: "-1.2rem", bottom: "-4rem"}},
             ]),
         })
     .addMarker('right', 1930, {
@@ -203,8 +207,8 @@ const timeline = new TimelineContainer(1792, 2021)
             caption: "Haas & Czjzek",
             text: "„děkujeme našim zaměstnancům, díky nimž výroba kvete i přes nápor světové hospodářské krize“",
             gallery: createImageGallery([
-                {file: '10b-combo.PNG', alt: "10b"},
-                {file: '10a-combo.PNG', alt: "10a"},
+                {file: '10b-combo.png', alt: "10b"},
+                {file: '10a-combo.png', alt: "10a"},
             ]),
         })
     .addMarker('left', 1945, {
@@ -218,6 +222,7 @@ const timeline = new TimelineContainer(1792, 2021)
     .addMarker('right', 1951, {
             offset: "28%",
             lineWidth: "2em",
+            lineWidthSm: "2em",
         },
         {
             caption: "Ministerstvo průmyslu",
@@ -229,6 +234,7 @@ const timeline = new TimelineContainer(1792, 2021)
     .addMarker('right', 1955, {
             offset: "-45.1%",
             lineWidth: "1.5em",
+            lineWidthSm: "1.5em",
         },
         {
             caption: "Usnesení vlády č. 2 371",
@@ -240,6 +246,7 @@ const timeline = new TimelineContainer(1792, 2021)
     .addMarker("left", 1958, {
             offset: "-41.2%",
             lineWidth: "1em",
+            lineWidthSm: "1em",
         },
         {
             caption: "světová výstava EXPO Brusel",
@@ -250,6 +257,8 @@ const timeline = new TimelineContainer(1792, 2021)
         })
     .addMarker("right", 1977, {
             offset: "12%",
+            lineWidth: '6em',
+            lineWidthSm: '5em',
         },
         {
             caption: "Královna Alžběta II.",
@@ -258,6 +267,7 @@ const timeline = new TimelineContainer(1792, 2021)
     .addMarker('left', 1985.325, {
             offset: "14.75%",
             lineWidth: '6em',
+            lineWidthSm: '4em',
         },
         {
             label: "1989",
@@ -269,11 +279,12 @@ const timeline = new TimelineContainer(1792, 2021)
         },
         {
             gallery: createImageGallery([
-                {file: '12a-combo.PNG', alt: "12a", placement: {size: "12em", left: "-0.75em", top: "-1.5em"}},
+                {file: '12a-combo.png', alt: "12a", placement: {size: "12em", left: "-0.75em", top: "-1.5em"}},
             ]),
         })
     .addMarker('left', 2009, {
             offset: "3.5%",
+            lineWidthSm: '3em',
         },
         {
             caption: "velký ruský zákazník",
@@ -281,26 +292,29 @@ const timeline = new TimelineContainer(1792, 2021)
         })
     .addMarker('left', 2013.5, {
             offset: "4%",
+            lineWidthSm: '2em',
         },
         {
-            label: "2011 - 2016",
+            label: "2011—2016",
             caption: "postupné skomírání v rukou jiných majitelů",
         })
     .addMarker('left', 2017, {
             offset: "7%",
+            lineWidthSm: '2.5em',
         },
         {
             caption: "Michal Prokop",
             text: "„Stěhujeme se s malým kouskem Horního Slavkova do Příchovic.“",
             gallery: createImageGallery([
-                {file: '13a-combo.PNG', alt: "13a"},
+                {file: '13a-combo.png', alt: "13a"},
             ]),
         })
     .addMarker('left', 2020.9, {
             offset: "4.6%",
+            lineWidthSm: '2em',
         },
         {
-            label: "3/2021",
+            label: "Březen 2021",
             caption: "Michal Prokop",
             text: "„Prozatím manufakturu zavíráme. Ale cesty pro ni budu hledat stále.“",
         })

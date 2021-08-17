@@ -1,6 +1,8 @@
 @import "../mixins/breakpoints";
 
 .navbar {
+    --burger-btn-size: 2.5em;
+
     position: sticky;
     top: 0;
     z-index: 50;
@@ -10,7 +12,7 @@
     min-height: 2em;
 
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr var(--burger-btn-size);
     gap: 0.5em;
     place-items: center;
 

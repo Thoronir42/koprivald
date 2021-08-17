@@ -6,6 +6,7 @@
   .legend {
     display: flex;
     gap: 0.25em 1.5em;
+    justify-content: center;
 
     @include sm() {
       flex-direction: column;
@@ -27,8 +28,12 @@
     }
   }
 
+  .timeline-help-text {
+    margin: 0;
+  }
+
   .graph {
-    margin-top: 4em;
+    margin-top: 2em;
 
     position: relative;
 
@@ -68,50 +73,72 @@
 
         @include sm() {
           border-left-width: 2px;
+          border-right-width: 4px;
         }
       }
     }
+  }
 
-    .image-roll {
-      --size: 3em;
+  .image-roll-container {
+    position: absolute;
+    align-self: center;
+    top: 24.5%;
+    z-index: -1;
 
-      position: absolute;
-      align-self: center;
-      top: 24.5%;
-      z-index: -1;
+    width: 100%;
 
-      width: 100vw;
-      height: var(--size);
+    display: grid;
+    place-items: stretch;
 
-      overflow: hidden;
+    > * {
+      grid-row: 1; grid-column: 1;
+    }
 
-      @include md() {
-        --size: 5.5em;
+    &.fade {
+      &::before, &::after {
+        grid-row: 1; grid-column: 1;
+        z-index: 1;
+        pointer-events: none;
+
+        place-self: start;
+        display: block; content: '';
+        height: 100%; width: 10%;
+        background: linear-gradient(var(--gradient-angle, 90deg), rgba(white, 1) 20%, rgba(white, 0) 100%);
       }
-
-      .stack {
-        display: inline-grid;
-        height: 100%;
-
-        &:not(:first-child) {
-          margin-inline-start: calc(-0.25 * var(--size));
-        }
+      &::after {
+        --gradient-angle: 270deg;
+        place-self: end;
       }
+    }
+  }
+  .image-roll {
+    --size: clamp(3em, 20vw, 5.5em);
+    height: var(--size);
 
-      .image {
-        grid-row: 1;
-        grid-column: 1;
-        background: none;
+    overflow: hidden;
 
-        &:first-child {
-          height: var(--size);
-          width: auto;
-        }
-        &:last-child {
-          height: calc(var(--size) * 0.4);
-          width: auto;
-          place-self: end start;
-        }
+    .stack {
+      display: inline-grid;
+      height: 100%;
+
+      &:not(:first-child) {
+        margin-inline-start: calc(-0.25 * var(--size));
+      }
+    }
+
+    .image {
+      grid-row: 1;
+      grid-column: 1;
+      background: none;
+
+      &:first-child {
+        height: var(--size);
+        width: auto;
+      }
+      &:last-child {
+        height: calc(var(--size) * 0.4);
+        width: auto;
+        place-self: end start;
       }
     }
   }

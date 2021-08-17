@@ -2,7 +2,7 @@
 <p class="text-primary">
     Kopřivald je porcelánkou žijící v myšlence. Povstává z prachu, který se válí v koutech
     zavřené slavkovské porcelánky. Její dřívější unikát, nejdelší historie na českém území,
-    obrovské know-how a manuální zručnost pracovníků, byl známy pod názvy Haas&amp;Czjzek a Schlaggenwald.
+    obrovské know-how a manuální zručnost pracovníků, byl známy pod názvy Haas &amp; Czjzek a Schlaggenwald.
     <br/>
     Chceme být platformou pro diskusi o výrobě porcelánu v Čechách, přidávat komentáře
     k této zanikající pýše, postavit se a hovořit.
@@ -19,16 +19,13 @@
 </p>
 
 <p class="detail-content text-primary">Foukáme do skomírajícího plamene.</p>
-
+<p class="detail-content">
+    <button class="btn inv-hig primary" onclick="toggleHistoryDetail()">Méně kopřiv</button>
+</p>
 
 <h1>Horní Slavkov</h1>
 <p>
     „První umělá hmota“ v produkci nejstarší české manufaktury Schlaggenwald.
-</p>
-<p style="color: var(--neutral)">
-    Střípky historie se skrývají pod letopočty.
-    <span class="display-hoverable">Zobrazíte je najetím kurzoru.</span>
-    <span class="display-non-hoverable">Zobrazíte je klepnutím.</span>
 </p>
 
 <div class="timeline">
@@ -38,16 +35,14 @@
             <div class="item" style="--color: var(--primary);">Hospodářské úspěchy</div>
         </div>
     </div>
+    <p class="timeline-help-text" style="color: var(--neutral)">
+        Střípky historie se skrývají pod letopočty.
+        <span class="display-hoverable">Zobrazíte je najetím kurzoru.</span>
+        <span class="display-non-hoverable">Zobrazíte je klepnutím.</span>
+    </p>
     <div class="graph">
-        <div class="image-roll">
-            <% for(let i = 0; i < 15; i++) { %>
-                <div class="stack">
-                    <img class="image" src="/images/koprivald/ilustrace/5b.PNG" alt="5b" width="1187"
-                         height="1187">
-                    <img class="image" src="/images/koprivald/ilustrace/5a.PNG" alt="5a" width="592"
-                         height="676">
-                </div>
-            <% } %>
+        <div class="image-roll-container fade">
+            <%- include('../components/timelineImageRoll') %>
         </div>
 
         <span class="year"><%- timeline.start %></span>

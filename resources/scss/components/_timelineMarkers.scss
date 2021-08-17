@@ -8,13 +8,19 @@
   --line-width: 4em; --line-c: 1;
 
   --total-offset: calc(50% + var(--offset));
-  --label-offset: calc(var(--line-width) * var(--line-c) + 0.25em);
+  --total-line-width: #{'max(calc(var(--line-width) * var(--line-c)), 1em)'};
+  --label-offset: calc(var(--total-line-width) + 0.25em);
 
   position: absolute;
   top: var(--top);
 
   @include sm() {
     --line-c: 0.25;
+
+    &[style*="--line-width-sm"] {
+      --line-width: var(--line-width-sm) !important;
+      --line-c: 1;
+    }
   }
 
   &[data-placement="right"] {
@@ -34,8 +40,10 @@
   &[data-placement="right"] .header:before, &[data-placement="left"] .header:after {
     display: block;
     content: '';
-    width: calc(var(--line-width) * var(--line-c));
+    width: var(--total-line-width);
     border-bottom: 2px dotted var(--secondary);
+
+    z-index: 1;
   }
 
   .header {
@@ -50,8 +58,14 @@
     white-space: nowrap;
 
     background: rgba(white, 0.85%);
-    box-shadow: rgba(white, 0.85%) 0 0 4px 4px;
+    box-shadow: rgba(white, 0.85%) 0 0 2px 2px;
     border-radius: 0.25em;
+
+    transition: color 0.25s;
+
+    &:hover, &:focus-within {
+      color: var(--primary);
+    }
 
     .image {
       position: absolute;
@@ -73,9 +87,8 @@
 
 .marker-pictures {
   .header {
-    color: var(--primary);
-
     @include md() {
+      color: var(--primary);
       pointer-events: none;
     }
   }

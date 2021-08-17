@@ -19,6 +19,9 @@ function getMarkerStyles(marker) {
     if (marker.position.lineWidth) {
         styles['--line-width'] = marker.position.lineWidth
     }
+    if (marker.position.lineWidthSm) {
+        styles['--line-width-sm'] = marker.position.lineWidthSm
+    }
 
     return Object.entries(styles).map(([prop, value]) => prop + ':' + value).join('; ')
 }

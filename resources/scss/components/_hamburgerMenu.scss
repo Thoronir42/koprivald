@@ -1,7 +1,7 @@
 .hamburger {
   .menu-toggle {
-    width: 2.5em;
-    height: 2.5em;
+    width: var(--burger-btn-size);
+    height: var(--burger-btn-size);
     padding: 0.325em;
 
     display: flex;
@@ -42,6 +42,10 @@
       font-weight: bold;
 
       color: var(--neutral-0);
+
+      &:hover {
+        color: var(--primary);
+      }
     }
   }
 
