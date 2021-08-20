@@ -314,7 +314,7 @@ const timeline = new TimelineContainer(1792, 2021)
             lineWidthSm: '2em',
         },
         {
-            label: "Březen 2021",
+            label: "březen 2021",
             caption: "Michal Prokop",
             text: "„Prozatím manufakturu zavíráme. Ale cesty pro ni budu hledat stále.“",
         })
